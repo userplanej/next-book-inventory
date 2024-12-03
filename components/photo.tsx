@@ -11,16 +11,17 @@ export function Photo({
 }: {
   src: string;
   title: string;
-  thumbhash: string;
+  thumbhash?: string;
   priority: boolean;
 }) {
+  console.log('Photo');
   return (
     <div className="relative aspect-[2/3] w-full overflow-hidden rounded-md bg-muted shadow-md">
       <Image
         alt={title}
         src={src}
-        blurDataURL={createPngDataUri(thumbhash)}
-        placeholder="blur"
+        
+     
         fill
         sizes="(min-width: 1280px) 14vw, (min-width: 1024px) 16vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, 33vw"
         priority={priority}

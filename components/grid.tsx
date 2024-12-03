@@ -39,10 +39,10 @@ function BookLink({
   book: Book;
   searchParams: SearchParams;
 }) {
-  if (!book.thumbhash) {
-    console.warn(`Book ${book.id} has no thumbhash`);
-    return null;
-  }
+  // if (!book.thumbhash) {
+  //   console.warn(`Book ${book.id} has no thumbhash`);
+  //   return null;
+  // }
 
   let noFilters = Object.values(searchParams).every((v) => v === undefined);
 
@@ -56,7 +56,7 @@ function BookLink({
       <Photo
         src={book.image_url!}
         title={book.title}
-        thumbhash={book.thumbhash!}
+      
         priority={priority}
       />
     </Link>

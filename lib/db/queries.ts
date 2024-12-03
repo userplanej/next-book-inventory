@@ -47,7 +47,7 @@ const pageFilter = (pgs?: string) => {
 const searchFilter = (q?: string) => {
   if (q) {
     const tsQuery = q.trim().split(/\s+/).join(' & ');
-    return sql`${books.title_tsv} @@ to_tsquery('english', ${tsQuery})`;
+    //return sql`${books.title_tsv} @@ to_tsquery('english', ${tsQuery})`;
   }
   return undefined;
 };
