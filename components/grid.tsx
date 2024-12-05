@@ -1,3 +1,4 @@
+'use cache';
 import Link from 'next/link';
 import { Book } from '@/lib/db/schema';
 import { Photo } from './photo';

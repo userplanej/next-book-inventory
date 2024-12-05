@@ -1,6 +1,8 @@
 export default {
   experimental: {
     ppr: true,
+    dynamicIO: true,
+    inlineCss: true,
   },
   logging: {
     fetches: {
