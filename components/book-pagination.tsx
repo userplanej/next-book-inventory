@@ -9,6 +9,7 @@ import {
   PaginationItem,
 } from '@/components/ui/pagination';
 import { SearchParams } from '@/lib/url-state';
+import Link from 'next/link';
 
 function FormValues({
   searchParams,
@@ -74,12 +75,13 @@ export function BookPagination({
         </div>
 
         <PaginationItem>
-          <Form action="/">
-            <FormValues
-              searchParams={searchParams}
-              pageNumber={Math.min(totalPages, currentPage + 1)}
-            />
-            <Button
+         
+          <Link
+            className="hover:text-white hover:bg-black hover:no-underline underline transition-colors"
+            href={`/?page=${currentPage + 1}`}
+            prefetch={true}
+          >
+           <Button
               variant="ghost"
               type="submit"
               size="icon"
@@ -87,7 +89,9 @@ export function BookPagination({
             >
               →
             </Button>
-          </Form>
+        </Link>
+           
+          
         </PaginationItem>
       </PaginationContent>
     </Pagination>
